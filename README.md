@@ -7,9 +7,7 @@ This repository is dedicated to practicing and honing SQL query skills. It conta
 - [Introduction](#introduction)
 - [Structure](#structure)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
@@ -30,4 +28,3 @@ To get started with this repository, you can clone it to your local machine usin
 
 ```bash
 git clone https://github.com/yourusername/sql-queries-practice.git
-ß
