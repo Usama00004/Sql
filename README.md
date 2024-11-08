@@ -4,7 +4,7 @@ This repository is dedicated to practicing and honing SQL query skills. It conta
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Introduction](#introduction) 
 - [Structure](#structure)
 - [Getting Started](#getting-started)
 
