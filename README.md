@@ -6,7 +6,7 @@ This repository is dedicated to practicing and honing SQL query skills. It conta
 
 - [Introduction](#introduction) 
 - [Structure](#structure)
-- [Getting Started](#getting-started)
+
 
 
 ## Introduction
