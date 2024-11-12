@@ -17,10 +17,10 @@ The purpose of this repository is to provide a collection of SQL queries and exe
 
 The repository is organized into the following directories:
 
-- **basic_queries/**: Contains simple SQL queries for beginners.
-- **intermediate_queries/**: Contains more complex SQL queries for those with some experience.
-- **advanced_queries/**: Contains advanced SQL queries and exercises.
-- **examples/**: Contains example queries and use cases.
+- **basic_queries/**: Contains simple SQL queries for beginners
+- **intermediate_queries/**: Contains more complex SQL queries for those with some experience
+- **advanced_queries/**: Contains advanced SQL queries and exercises
+- **examples/**: Contains example queries and use cases
 
 ## Getting Started
 
