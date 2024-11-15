@@ -4,7 +4,6 @@ CREATE TABLE table_name (
     column_name column_type
 );
 
-
 -- Insert table 
 INSERT INTO table_name (column1, column2)
 VALUES (value1, value2);

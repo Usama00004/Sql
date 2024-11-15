@@ -47,8 +47,7 @@ INSERT INTO jobs (job_id,job_title, min_salary, max_salary) VALUES
 (3,'Software Engineer', 60000.00, 120000.00),
 (4,'Marketing Specialist', 45000.00, 85000.00),
 (5,'Sales Representative', 30000.00, 70000.00);
-\
-\
+
 CREATE TABLE departments (
     department_id INT,
     department_name VARCHAR(100) NOT NULL
