@@ -15,3 +15,9 @@ JOIN
     departments d ON e.department_id = d.department_id
 ORDER BY 
     e.department_id, salary_rank;
+
+
+--Divide the result set into a specified number of buckets 
+SELECT employee_id, first_name, last_name, salary,
+       NTILE(3) OVER (ORDER BY salary DESC) AS salary_quartile
+FROM employees;
