@@ -21,3 +21,15 @@ ORDER BY
 SELECT employee_id, first_name, last_name, salary,
        NTILE(3) OVER (ORDER BY salary DESC) AS salary_quartile
 FROM employees;
+
+-- analyze salary differences between employees in the same department, ordered by their hire dates
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    e.department_id,
+    e.salary,
+    LAG(e.salary) OVER (PARTITION BY e.department_id ORDER BY e.hire_date) AS previous_salary,
+    e.salary - LAG(e.salary) OVER (PARTITION BY e.department_id ORDER BY e.hire_date) AS salary_difference
+FROM 
+    employees e;
