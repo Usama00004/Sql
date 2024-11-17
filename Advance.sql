@@ -33,3 +33,17 @@ SELECT
     e.salary - LAG(e.salary) OVER (PARTITION BY e.department_id ORDER BY e.hire_date) AS salary_difference
 FROM 
     employees e;
+
+
+-- Get Employee Details with Job and Department:
+SELECT 
+    emp.employee_id,
+    emp.first_name,
+    emp.last_name,
+    emp.email,
+    emp.department_id,
+    jb.job_title,
+    dep.department_name
+FROM employees AS emp
+LEFT JOIN jobs AS jb ON emp.job_id = jb.job_id
+LEFT JOIN departments AS dep ON emp.department_id = dep.department_id;
