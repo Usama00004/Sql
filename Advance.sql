@@ -59,3 +59,15 @@ left join departments as dep
 ON emp.department_id = dep.department_id
 GROUP By Department_Name
 ORDER By Average_Salary DESC
+
+
+-- Get total Salary expenditure by department
+
+SELECT 
+    dep.department_name as Department_Name,
+    SUM(emp.salary) as Salary_Expenditure
+From employees as emp
+left join departments as dep 
+ON emp.department_id = dep.department_id
+GROUP By Department_Name
+ORDER By Salary_Expenditure DESC
