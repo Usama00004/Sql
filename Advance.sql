@@ -47,3 +47,15 @@ SELECT
 FROM employees AS emp
 LEFT JOIN jobs AS jb ON emp.job_id = jb.job_id
 LEFT JOIN departments AS dep ON emp.department_id = dep.department_id;
+
+
+-- Find average salary by department
+
+SELECT 
+    dep.department_name as Department_Name,
+    AVG(emp.salary) as Average_Salary
+From employees as emp
+left join departments as dep 
+ON emp.department_id = dep.department_id
+GROUP By Department_Name
+ORDER By Average_Salary DESC
