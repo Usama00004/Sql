@@ -37,41 +37,39 @@ FROM
     employees e;
 
 
-----------------------------------------------------------------------------------------------------------------------
---Retrieve the employee's full name, job title, department name, and salary.
---Calculate the average salary for each department and include it in the result.
---Display only those employees whose salary is greater than the average salary of their department.
---Sort the results by department name in ascending order and then by salary in descending order.
---Include a column showing how much the employee's salary is above the department's average.
+-- Get Employee Details with Job and Department:
+SELECT 
+    emp.employee_id,
+    emp.first_name,
+    emp.last_name,
+    emp.email,
+    emp.department_id,
+    jb.job_title,
+    dep.department_name
+FROM employees AS emp
+LEFT JOIN jobs AS jb ON emp.job_id = jb.job_id
+LEFT JOIN departments AS dep ON emp.department_id = dep.department_id;
 
-WITH SalaryWithAverage AS (
-    SELECT 
-        emp.employee_id,
-        CONCAT(emp.first_name, ' ', emp.last_name) AS full_name,
-        jb.job_title AS job_title,
-        emp.salary AS salary,
-        dep.department_name AS department_name,
-        AVG(emp.salary) OVER (PARTITION BY emp.department_id) AS department_average_salary
-    FROM 
-        employees AS emp
-    LEFT JOIN 
-        departments AS dep ON emp.department_id = dep.department_id
-    LEFT JOIN 
-        jobs AS jb ON emp.job_id = jb.job_id
-)
+
+-- Find average salary by department
 
 SELECT 
-    full_name,
-    job_title,
-    salary,
-    department_name,
-    department_average_salary
-FROM 
-    SalaryWithAverage
-WHERE 
-    salary > department_average_salary
-ORDER BY 
-    department_name ASC, 
-    salary DESC;
+    dep.department_name as Department_Name,
+    AVG(emp.salary) as Average_Salary
+From employees as emp
+left join departments as dep 
+ON emp.department_id = dep.department_id
+GROUP By Department_Name
+ORDER By Average_Salary DESC
 
-----------------------------------------------------------------------------------------------------------------------
+
+-- Get total Salary expenditure by department
+
+SELECT 
+    dep.department_name as Department_Name,
+    SUM(emp.salary) as Salary_Expenditure
+From employees as emp
+left join departments as dep 
+ON emp.department_id = dep.department_id
+GROUP By Department_Name
+ORDER By Salary_Expenditure DESC
