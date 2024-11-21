@@ -115,4 +115,30 @@ WHERE
     salary > department_average_salary
 ORDER BY 
     department_name ASC, 
-    salary DESC;
+    salary DESC; 
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+-- Find Top 3 Products with the Highest Sales in Each Category
+
+ SELECT 
+    p.category_id, 
+    c.category_name, 
+    p.product_name, 
+    SUM(o.quantity) AS total_sales
+FROM 
+    products p
+JOIN 
+    orders o ON p.product_id = o.product_id
+JOIN 
+    categories c ON p.category_id = c.category_id
+GROUP BY 
+    p.category_id, c.category_name, p.product_name
+ORDER BY 
+    p.category_id, total_sales DESC
+LIMIT 3;
+   
+
+----------------------------------------------------------------------------------------------------------------------
+-- Find Top 3 Products with the Highest Sales in Each Category   
