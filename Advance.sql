@@ -141,4 +141,14 @@ LIMIT 3;
    
 
 ----------------------------------------------------------------------------------------------------------------------
--- Find Top 3 Products with the Highest Sales in Each Category   
+-- Retrieve Users Who Have Never Placed an Order
+SELECT 
+    u.user_id, 
+    u.user_name, 
+    u.email
+FROM 
+    users u
+LEFT JOIN 
+    orders o ON u.user_id = o.user_id
+WHERE 
+    o.order_id IS NULL;
