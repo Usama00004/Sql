@@ -152,3 +152,22 @@ LEFT JOIN
     orders o ON u.user_id = o.user_id
 WHERE 
     o.order_id IS NULL;
+
+----------------------------------------------------------------------------------------------------------------------
+-- List all employees who earn above the maximum salary for their job title, including their job title and department.
+
+ SELECT 
+    e.first_name || ' ' || e.last_name AS employee_name,
+    j.job_title,
+    d.department_name,
+    e.salary,
+    j.max_salary
+FROM 
+    employees e
+JOIN 
+    jobs j ON e.job_id = j.job_id
+JOIN 
+    departments d ON e.department_id = d.department_id
+WHERE 
+    e.salary > j.max_salary;
+   
