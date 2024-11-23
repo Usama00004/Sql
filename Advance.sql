@@ -171,3 +171,17 @@ JOIN
 WHERE 
     e.salary > j.max_salary;
    
+----------------------------------------------------------------------------------------------------------------------   
+--Find the average salary by department and identify which department has the highest average salary.
+SELECT 
+    d.department_name,
+    ROUND(AVG(e.salary), 2) AS avg_salary
+FROM 
+    employees e
+JOIN 
+    departments d ON e.department_id = d.department_id
+GROUP BY 
+    d.department_name
+ORDER BY 
+    avg_salary DESC
+LIMIT 1;
