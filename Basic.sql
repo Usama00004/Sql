@@ -34,3 +34,8 @@ ADD CONSTRAINT constraint_name constraint_type (column_name);
 SELECT id, name, position, salary, department
 FROM employees
 WHERE salary > 50000;
+
+ --count the number of employees in each department
+ SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
