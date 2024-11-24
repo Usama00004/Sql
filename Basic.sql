@@ -28,3 +28,9 @@ RENAME TO new_table_name
 -- Alter table (Add a constraint)
 ALTER TABLE table_name 
 ADD CONSTRAINT constraint_name constraint_type (column_name);
+
+
+--Get all employees with a salary greater than 50,000:
+SELECT id, name, position, salary, department
+FROM employees
+WHERE salary > 50000;
