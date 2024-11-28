@@ -75,3 +75,15 @@ JOIN
     departments d ON e.department_id = d.department_id
 ORDER BY 
     e.employee_id;
+
+
+--Count employees hired each year
+SELECT 
+    YEAR(hire_date) AS hire_year,
+    COUNT(*) AS employee_count
+FROM 
+    employees
+GROUP BY 
+    YEAR(hire_date)
+ORDER BY 
+    hire_year;
