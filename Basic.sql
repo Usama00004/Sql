@@ -87,3 +87,20 @@ GROUP BY
     YEAR(hire_date)
 ORDER BY 
     hire_year;
+
+--List all employees in the Engineering department
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    e.email,
+    d.department_name
+FROM 
+    employees e
+JOIN 
+    departments d
+ON 
+    e.department_id = d.department_id
+WHERE 
+    d.department_name = 'Engineering';
+
