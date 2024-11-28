@@ -7,7 +7,7 @@ SELECT
     e.department_id,
     d.department_name,
     e.salary,
-    RANK() OVER (PARTITION BY e.department_id ORDER BY e.salary DESC) AS salary_rank,
+    DENSE_RANK() OVER (PARTITION BY e.department_id ORDER BY e.salary DESC) AS salary_rank,
     SUM(e.salary) OVER (PARTITION BY e.department_id) AS total_department_salary
 FROM 
     employees e

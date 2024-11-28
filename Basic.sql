@@ -31,9 +31,16 @@ ADD CONSTRAINT constraint_name constraint_type (column_name);
 
 
 --Get all employees with a salary greater than 50,000:
-SELECT id, name, position, salary, department
-FROM employees
-WHERE salary > 50000;
+SELECT 
+    id AS employee_id, 
+    name AS employee_name, 
+    position AS employee_position, 
+    salary AS employee_Salary, 
+    department AS employee_department
+FROM 
+    employees
+WHERE 
+    salary > 50000;
 
  --count the number of employees in each department
  SELECT department, COUNT(*) AS employee_count
@@ -78,14 +85,12 @@ ORDER BY
 
 --Count employees hired each year
 SELECT 
-    YEAR(hire_date) AS hire_year,
-    COUNT(*) AS employee_count
-FROM 
-    employees
-GROUP BY 
-    YEAR(hire_date)
-ORDER BY 
-    hire_year;
+YEAR(hire_date) AS hire_year,
+COUNT(*) AS employee_count
+FROM employees
+GROUP BY YEAR(hire_date)
+ORDER BY hire_year;
+
 
 --List all employees in the Engineering department
 
