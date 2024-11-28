@@ -76,7 +76,6 @@ JOIN
 ORDER BY 
     e.employee_id;
 
-
 --Count employees hired each year
 SELECT 
     YEAR(hire_date) AS hire_year,
@@ -89,6 +88,7 @@ ORDER BY
     hire_year;
 
 --List all employees in the Engineering department
+
 SELECT 
     e.employee_id,
     e.first_name,
@@ -103,4 +103,3 @@ ON
     e.department_id = d.department_id
 WHERE 
     d.department_name = 'Engineering';
-
