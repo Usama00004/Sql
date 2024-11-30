@@ -108,3 +108,16 @@ ON
     e.department_id = d.department_id
 WHERE 
     d.department_name = 'Engineering';
+
+
+--Find employees who have been in the company for the longest time
+SELECT 
+    employee_id, 
+    first_name, 
+    last_name, 
+    hire_date, 
+    DATEDIFF(CURDATE(), hire_date) AS days_with_company
+FROM 
+    employees
+ORDER BY hire_date ASC
+LIMIT 5;
