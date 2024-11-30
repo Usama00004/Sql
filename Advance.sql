@@ -200,3 +200,14 @@ SELECT
 FROM employees AS emp
 LEFT JOIN jobs AS jb ON emp.job_id = jb.job_id
 LEFT JOIN departments AS dep ON emp.department_id = dep.department_id;
+
+----------------------------------------------------------------------------------------------------------------------
+-- Find the highest-paid employee in each department
+SELECT e.employee_id, e.first_name, e.last_name, e.salary, d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+WHERE e.salary = (
+    SELECT MAX(salary)
+    FROM employees
+    WHERE department_id = e.department_id
+);
