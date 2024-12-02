@@ -1,5 +1,4 @@
 --Query 1: Rank employees by salary within their department and include the total salary for each department.
-
 SELECT 
     e.employee_id,
     e.first_name,
@@ -16,7 +15,6 @@ JOIN
 ORDER BY 
     e.department_id, salary_rank;
 ----------------------------------------------------------------------------------------------------------------------
-
 --Divide the result set into a specified number of buckets 
 SELECT employee_id, first_name, last_name, salary,
        NTILE(3) OVER (ORDER BY salary DESC) AS salary_quartile
@@ -78,7 +76,6 @@ ON emp.department_id = dep.department_id
 GROUP By Department_Name
 ORDER By Salary_Expenditure DESC
 
-
 ----------------------------------------------------------------------------------------------------------------------
 
 --Retrieve the employee's full name, job title, department name, and salary.
@@ -116,8 +113,6 @@ WHERE
 ORDER BY 
     department_name ASC, 
     salary DESC; 
-
-
 
 ----------------------------------------------------------------------------------------------------------------------
 -- Find Top 3 Products with the Highest Sales in Each Category

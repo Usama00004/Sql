@@ -59,4 +59,3 @@ INSERT INTO departments (department_id,department_name) VALUES
 (3,'Engineering'),
 (4,'Marketing'),
 (5,'Sales');
-
