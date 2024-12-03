@@ -1,1 +1,7 @@
 Total Sales = SUM (Sales[Sales Amount])
+
+----------------------------------------------------------------
+
+Full Name = CONCATENATE (Employees[FirstName], CONCATENATE ( " ", Employees[LastName] ) )
+
+----------------------------------------------------------------
