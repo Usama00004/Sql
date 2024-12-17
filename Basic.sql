@@ -25,6 +25,10 @@ MODIFY column_name new_data_type;
 ALTER TABLE table_name
 RENAME TO new_table_name
 
+--Altering the name of the column
+ALTER TABLE employees 
+CHANGE COLUMN lastName last_name VARCHAR(100);
+
 -- Alter table (Add a constraint)
 ALTER TABLE table_name 
 ADD CONSTRAINT constraint_name constraint_type (column_name);
