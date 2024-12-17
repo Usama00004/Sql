@@ -9,3 +9,20 @@ Full Name = CONCATENATE (Employees[FirstName], CONCATENATE ( " ", Employees[Last
 Short Name = LEFT (Date[Month], 3)
 
 ----------------------------------------------------------------
+
+Avg of Quantities Sold = AVERAGE (Sales [Quantity])
+
+----------------------------------------------------------------
+
+Total Sale Amount = AVERAGEX (Sales, Sales [Quantity] * Sales [Price])
+
+----------------------------------------------------------------
+
+Average Amount = AVERAGEA([Amount])
+
+---------------------------------------------------------------
+
+Median Customer Age = MEDIAN(Customers [Age])
+
+
+
