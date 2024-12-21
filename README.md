@@ -1,4 +1,4 @@
-# SQL Queries Practice Repository
+# SQL Queries Practice Repository 
 
 This repository is dedicated to practicing and honing SQL query skills. It contains various SQL scripts, exercises, and examples aimed at improving proficiency in writing and understanding SQL.
 
