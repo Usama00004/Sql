@@ -24,5 +24,9 @@ Average Amount = AVERAGEA([Amount])
 
 Median Customer Age = MEDIAN(Customers [Age])
 
+---------------------------------------------------------------
+--Repeated
+Median Customer Age = MEDIAN(Customers [Age])
+
 
 
