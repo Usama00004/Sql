@@ -28,5 +28,10 @@ Median Customer Age = MEDIAN(Customers [Age])
 --Repeated
 Median Customer Age = MEDIAN(Customers [Age])
 
+---------------------------------------------------------------
+--Repeated
+Median Customer Age = MEDIAN(Customers [Age])
+
+
 
 
