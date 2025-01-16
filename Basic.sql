@@ -135,7 +135,7 @@ ORDER BY hire_date ASC
 LIMIT 5;
 
 
---List all employees in the Engineering department
+-- List all employees in the Engineering department
 
 SELECT 
     e.employee_id,
@@ -154,6 +154,7 @@ WHERE
 
 
 -- List all customers and highlight those who haven't placed any orders
+
 SELECT 
     Customers.CustomerID,
     Customers.Name, 
@@ -167,14 +168,26 @@ WHERE
 
 
  -- List all employees and their assigned projects (if any).
-SELECT Employees.EmployeeID, Employees.Name, Projects.ProjectName
-FROM Employees
-LEFT JOIN Projects ON Employees.EmployeeID = Projects.EmployeeID;
+
+SELECT 
+    Employees.EmployeeID, 
+    Employees.Name, 
+    Projects.ProjectName
+FROM 
+    Employees
+LEFT JOIN 
+    Projects ON Employees.EmployeeID = Projects.EmployeeID;
+
 
 -- Generate a report of all products and their sales, including unsold products.
-SELECT Products.ProductID, Products.ProductName, Sales.SaleID
-FROM Products
-LEFT JOIN Sales ON Products.ProductID = Sales.ProductID;
+SELECT 
+    Products.ProductID, 
+    Products.ProductName, 
+    Sales.SaleID
+FROM 
+    Products
+LEFT JOIN 
+    Sales ON Products.ProductID = Sales.ProductID;
 
 
 
