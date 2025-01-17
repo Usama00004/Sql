@@ -1,9 +1,164 @@
+
+-- Get all employees with a salary greater than 50,000:
+SELECT 
+    id AS employee_id, 
+    name AS employee_name, 
+    position AS employee_position, 
+    salary AS employee_Salary, 
+    department AS employee_department
+FROM 
+    employees
+WHERE 
+    salary > 50000;
+
+ --count the number of employees in each department
+
+SELECT 
+    department, 
+    COUNT(*) AS employee_count
+FROM 
+    employees
+GROUP BY 
+    department;
+
+--List all employees with their job titles and department names
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    j.job_title,
+    d.department_name,
+    e.salary
+FROM 
+    employees e
+JOIN 
+    jobs j ON e.job_id = j.job_id
+JOIN 
+    departments d ON e.department_id = d.department_id
+ORDER BY 
+    e.employee_id;
+
+--List all employees with their job titles and department names
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    j.job_title,
+    d.department_name,
+    e.salary
+FROM 
+    employees e
+JOIN 
+    jobs j ON e.job_id = j.job_id
+JOIN 
+    departments d ON e.department_id = d.department_id
+ORDER BY 
+    e.employee_id;
+
+--Count employees hired each year
+SELECT 
+YEAR(hire_date) AS hire_year,
+COUNT(*) AS employee_count
+FROM employees
+GROUP BY YEAR(hire_date)
+ORDER BY hire_year;
+
+
+--List all employees in the Engineering department
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    e.email,
+    d.department_name
+FROM 
+    employees e
+JOIN 
+    departments d
+ON 
+    e.department_id = d.department_id
+WHERE 
+    d.department_name = 'Engineering';
+
+
+--Find employees who have been in the company for the longest time
+SELECT 
+    employee_id, 
+    first_name, 
+    last_name, 
+    hire_date, 
+    DATEDIFF(CURDATE(), hire_date) AS days_with_company
+FROM 
+    employees
+ORDER BY hire_date ASC
+LIMIT 5;
+
+
+-- List all employees in the Engineering department
+
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    e.email,
+    d.department_name
+FROM 
+    employees e
+JOIN 
+    departments d
+ON 
+    e.department_id = d.department_id
+WHERE 
+    d.department_name = 'Engineering';
+
+
+-- List all customers and highlight those who haven't placed any orders
+
+SELECT 
+    Customers.CustomerID,
+    Customers.Name, 
+    Orders.OrderID
+FROM 
+    Customers
+LEFT JOIN 
+    Orders ON Customers.CustomerID = Orders.CustomerID
+WHERE 
+    Orders.OrderID IS NULL;
+
+
+ -- List all employees and their assigned projects (if any).
+
+SELECT 
+    Employees.EmployeeID, 
+    Employees.Name, 
+    Projects.ProjectName
+FROM 
+    Employees
+LEFT JOIN 
+    Projects ON Employees.EmployeeID = Projects.EmployeeID;
+
+
+-- Generate a report of all products and their sales, including unsold products.
+SELECT 
+    Products.ProductID, 
+    Products.ProductName, 
+    Sales.SaleID
+FROM 
+    Products
+LEFT JOIN 
+    Sales ON Products.ProductID = Sales.ProductID;
+
+
 -- Question 1
 --Retrieve the employee's full name, job title, department name, and salary.
 --Calculate the average salary for each department and include it in the result.
 --Display only those employees whose salary is greater than the average salary of their department.
 --Sort the results by department name in ascending order and then by salary in descending order.
 --Include a column showing how much the employee's salary is above the department's average.
+
 
 WITH SalaryWithAverage AS (
     SELECT 
