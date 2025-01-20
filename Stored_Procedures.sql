@@ -21,6 +21,38 @@ EXEC GetAllEmployees()
 
 
 
+DELIMITER $$
+CREATE PROCEDURE GetTotalSales(
+    IN product_id INT,
+    OUT totalSales DECIMAL(10,2) 
+
+)
+BEGIN
+    SELECT SUM(quantity * price) INTO totalSales
+    FROM Sales
+    WHERE product_id = product_id
+END $$
+
+DELIMITER ;
+
+
+
+-- Counter using loop
+DELIMITER $$
+
+CREATE PROCEDURE PrintNumbers()
+BEGIN
+    DECLARE counter INT DEFAULT 1;
+
+    WHILE counter <= 10 DO
+        -- Print the current value of counter
+        SELECT counter;
+        SET counter = counter + 1;
+    END WHILE;
+END$$
+
+DELIMITER ;
+
 
 
 
