@@ -6,11 +6,19 @@ BEGIN
     -- SQL statements
 END;
 
+EXEC procedure_name()
 
--- Simple Procedure
+--Creation 
 CREATE PROCEDURE GetAllEmployees
-AS
-BEGIN
-    SELECT * FROM Employees;
-END;
+AS 
+BEGIN 
+
+SELECT * FROM employees
+
+END
+--For Execution
+EXEC GetAllEmployees()
+
+
+
 
